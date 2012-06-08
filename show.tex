@@ -1,7 +1,7 @@
 \documentclass{beamer}
 
-\usetheme{ucl}
-\usecolortheme[color=brightblue]{uclone}
+\usetheme[color=orange]{ucl}
+
 
 \title{Title of the Presentation}
 \author[]{Author 1 \and Author 2}
@@ -11,8 +11,11 @@ Department of Statistical Science \\ University College London
 \date{28 January 2011}
 \begin{document}
 
+{
+\setbeamertemplate{headline}[large]
 \frame{
 \titlepage
+}
 }
 
 \section{Section 1}
@@ -41,10 +44,10 @@ text here
 
 \frame {
   \frametitle{Third Slide}
-  \begin{itemize}
+  \begin{enumerate}
   \item 1
   \item 2 
-  \end{itemize}
+  \end{enumerate}
   $$
   x_i = y_i + \varepsilon_i
   $$

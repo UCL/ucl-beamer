@@ -4,8 +4,8 @@
 \DeclareOptionBeamer{color}{%
   \def\ucl@maincolor{#1}%
 }
-\def\ucl@maincolor{black}
 
+\def\ucl@maincolor{black} % default color
 \ProcessOptionsBeamer
 
 
@@ -33,9 +33,10 @@
 
 
 
-\definecolor{colstyle}{named}{ucl\ucl@maincolor}
 \definecolor{colalert}{rgb}{1,0,0}
 
+
+\definecolor{colstyle}{named}{ucl\ucl@maincolor}
 \newcommand\bannerUCL{banners/banner\ucl@maincolor .pdf}
 
 \mode
