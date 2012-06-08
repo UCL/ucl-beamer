@@ -1,21 +1,20 @@
-\DeclareOptionBeamer{color}{\PassOptionsToPackage{color=#1}{beamercolorthemeuclone}}
-\DeclareOptionBeamer{blockborder}{%
-}
+\DeclareOptionBeamer{color}{\PassOptionsToPackage{color=#1}{beamercolorthemeucl}}
+\DeclareOptionBeamer{blockborder}{\useinnertheme{blockborder}}
 
 \ProcessOptionsBeamer
 
 \usetheme{default}
 
-\usecolortheme{uclone}
+\usecolortheme{ucl}
 
 \defbeamertemplate*{headline}{large}{% for title pages
-  \includegraphics[width=\paperwidth,trim=170 0 0 0]{\bannerUCL}%
+  \includegraphics[width=\paperwidth,trim=150 0 0 0]{\bannerUCL}%
 }
 \defbeamertemplate*{headline}{normal}{% for everything else
   \includegraphics[width=\paperwidth]{\bannerUCL}%
 }
-\setbeamertemplate{headline}[normal]
-\setbeamercolor{background canvas}{bg=ucllightgrey}
+%\setbeamertemplate{headline}[normal]
+%\setbeamercolor{background canvas}{bg=ucllightgrey}
 
 
 %\setbeamertemplate{background canvas}{\includegraphics[width=\paperwidth]{\bannerUCL}}
@@ -27,33 +26,13 @@
 % }
 
 
-\setbeamertemplate{block begin}
-{
-  \par\vskip\medskipamount%
-  \begin{beamercolorbox}[colsep*=.5ex]{block title}%
-  \begin{beamercolorbox}[colsep=0.5ex,dp=0ex]{block title}
-    \usebeamerfont*{block title}\insertblocktitle\par%
-    \vskip0.5ex
-  \end{beamercolorbox}%
-  {\parskip0pt\par}%
-  \ifbeamercolorempty[bg]{block title}
-  {}
-  {\ifbeamercolorempty[bg]{block body}{}{\nointerlineskip\vskip-0.5pt}}%
-  \usebeamerfont{block body}%
-  \begin{beamercolorbox}[sep=1ex,vmode]{block body}%
-    \ifbeamercolorempty[bg]{block body}{\vskip-.25ex}{\vskip-.75ex}\vbox{}%
-}
-\setbeamertemplate{block end}
-{\end{beamercolorbox}%
-\end{beamercolorbox}\vskip\smallskipamount}
-
 
 \useinnertheme{rectangles}
 \setbeamertemplate{items}[square]
 \setbeamercolor{title}{bg=colstyle, fg=white}
 \setbeamercolor{structure}{fg=black}
 
-\setbeamercolor{block body}{bg=colstyle!50!white, fg=black}
+\setbeamercolor{block body}{bg=colstyle!50, fg=black}
 \setbeamercolor{block body alerted}{}
 \setbeamercolor{block body example}{}
 \setbeamercolor{block title}{bg=colstyle, fg=white}

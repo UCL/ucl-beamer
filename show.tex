@@ -1,6 +1,6 @@
 \documentclass{beamer}
 
-\usetheme[color=orange]{ucl}
+\usetheme[color=orange,blockborder]{ucl}
 
 
 \title{Title of the Presentation}
@@ -31,9 +31,10 @@ Department of Statistical Science \\ University College London
 
 \frame {
   \frametitle{Second Slide}
+  \framesubtitle{with a subtitle}
   \begin{block}{Block title}
-text here
-\end{block}
+    text here
+  \end{block}
   \begin{itemize}
   \item 3
   \item 4 
@@ -48,6 +49,10 @@ text here
   \item 1
   \item 2 
   \end{enumerate}
+  \begin{theorem}
+    This is a result.
+  \end{theorem}
+
   $$
   x_i = y_i + \varepsilon_i
   $$

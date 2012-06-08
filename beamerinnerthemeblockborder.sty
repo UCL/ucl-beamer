@@ -1,0 +1,19 @@
+\setbeamertemplate{block begin}{%
+  \par\vskip\medskipamount%
+  \begin{beamercolorbox}[colsep*=.5ex]{block title}%
+    \begin{beamercolorbox}[colsep=0.5ex,dp=0ex]{block title}
+      \usebeamerfont*{block title}\insertblocktitle\par%
+      \vskip0.5ex
+    \end{beamercolorbox}%
+    {\parskip0pt\par}%
+    \ifbeamercolorempty[bg]{block title}
+    {}
+    {\ifbeamercolorempty[bg]{block body}{}{\nointerlineskip\vskip-0.5pt}}%
+    \usebeamerfont{block body}%
+    \begin{beamercolorbox}[sep=1ex,vmode]{block body}%
+      \ifbeamercolorempty[bg]{block body}{\vskip-.25ex}{\vskip-.75ex}\vbox{}%
+    }
+\setbeamertemplate{block end}{%
+  \end{beamercolorbox}%
+  \end{beamercolorbox}\vskip\smallskipamount%
+}

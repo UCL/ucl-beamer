@@ -1,0 +1,44 @@
+\mode<presentation>
+
+
+\DeclareOptionBeamer{color}{%
+  \def\ucl@maincolor{#1}%
+}
+
+\def\ucl@maincolor{black} % default color
+\ProcessOptionsBeamer
+
+
+\definecolor{uclblack}{RGB}{26,25,25} %
+
+\definecolor{ucldarkpurple}{cmyk}{0.32,0.42,0,0.55}
+\definecolor{ucldarkred}{cmyk}{0,1,0.30,0.61}
+\definecolor{ucldarkblue}{cmyk}{1,0.24,0,0.64}
+\definecolor{ucldarkgreen}{cmyk}{0,0,0.91,0.79}
+\definecolor{ucldarkbrown}{cmyk}{0.57,0.80,1,0.45}
+\definecolor{uclrichred}{cmyk}{0,1,0.62,0}
+\definecolor{uclmidred}{cmyk}{0,0.79,1,0}
+\definecolor{uclnavyblue}{cmyk}{1,0.57,0,0.40}
+\definecolor{uclmidgreen}{cmyk}{0.25,0,0.80,0.30}
+\definecolor{ucldarkgrey}{cmyk}{0,0.09,0.16,0.43}
+%\definecolor{uclpink}{cmyk}{0,1,0.35,0.27} % defined in UCL corporate identity, but no corresponding banner
+\definecolor{uclorange}{cmyk}{0,0.45,0.91,0} 
+\definecolor{uclbrightblue}{cmyk}{0.92,0,0.15,0.05}
+\definecolor{uclbrightgreen}{cmyk}{0.12,0,0.79,0.06}
+\definecolor{ucllightgrey}{cmyk}{0,0.04,0.09,0.24}
+\definecolor{ucllightpurple}{cmyk}{0.17,0.25,0.15,0}
+\definecolor{uclyellow}{cmyk}{0,0.25,0.95,0}
+\definecolor{ucllightblue}{cmyk}{0.27,0.03,0,0.13}
+\definecolor{ucllightgreen}{cmyk}{0.14,0,0.36,0.10}
+\definecolor{uclstone}{cmyk}{0,0.02,0.06,0.07}
+
+
+
+\definecolor{colalert}{rgb}{1,0,0}
+
+
+\definecolor{colstyle}{named}{ucl\ucl@maincolor}
+\newcommand\bannerUCL{banners/banner\ucl@maincolor .pdf}
+
+\mode
+<all>
