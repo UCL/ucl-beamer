@@ -1,7 +1,11 @@
 \documentclass{beamer}
 
-\usetheme[color=orange,blockborder]{ucl}
+\usetheme[color=midgreen,blockborder]{ucl}
+\logo{\color{red}\rule{.5cm}{.5cm}}
+%\setbeamercolor{headline canvas}{bg=black}
 
+% to disable nav symbols
+%\setbeamertemplate{navigation symbols}{} 
 
 \title{Title of the Presentation}
 \author[]{Author 1 \and Author 2}
@@ -9,13 +13,14 @@
 Department of Statistical Science \\ University College London
 }
 \date{28 January 2011}
+\setbeamertemplate{headline}[large]
 \begin{document}
 
 {
-\setbeamertemplate{headline}[large]
-\frame{
-\titlepage
-}
+
+\begin{frame}
+  \titlepage
+\end{frame}
 }
 
 \section{Section 1}
@@ -29,6 +34,7 @@ Department of Statistical Science \\ University College London
   \end{itemize}
 }
 
+{\definecolor{colstyle}{named}{midgreen}
 \frame {
   \frametitle{Second Slide}
   \framesubtitle{with a subtitle}
@@ -40,7 +46,7 @@ Department of Statistical Science \\ University College London
   \item 4 
   \end{itemize}
 }
-
+}
 \section{Section 2}
 
 \frame {

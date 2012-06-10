@@ -5,3 +5,4 @@
 *.pdf
 *.snm
 *.toc
+!banners/*.pdf

@@ -1,46 +1,33 @@
+\def\setbannercolor#1{\gdef\ucl@banner{uclbanner#1}}
+\def\ucl@banner{\@latex@error{\noexpand\setbannercolor not set}\@ehc}
+
 \DeclareOptionBeamer{color}{\PassOptionsToPackage{color=#1}{beamercolorthemeucl}}
 \DeclareOptionBeamer{blockborder}{\useinnertheme{blockborder}}
 
 \ProcessOptionsBeamer
 
 \usetheme{default}
-
 \usecolortheme{ucl}
 
-\defbeamertemplate*{headline}{large}{% for title pages
-  \includegraphics[width=\paperwidth,trim=150 0 0 0]{\bannerUCL}%
+\defbeamertemplate*{headline}{ucl}{% for everything else
+  \begin{beamercolorbox}[wd=\paperwidth]{headline canvas}
+    \includegraphics{banners/\ucl@banner}%
+    % this should be equal to the height of the building in the logo
+    \ifbeamercolorempty[bg]{headline canvas}{}{\vskip0.015\paperwidth}
+  \end{beamercolorbox}
 }
-\defbeamertemplate*{headline}{normal}{% for everything else
-  \includegraphics[width=\paperwidth]{\bannerUCL}%
+
+\defbeamertemplate{headline}{ucllarge}{% for title pages
+  % the banner image is 363 * 29 pixels
+  \begin{beamercolorbox}{headline canvas}
+    \includegraphics[width=\paperwidth,trim=121 0 0 0]{banners/ucl@banner}%
+    \ifbeamercolorempty[bg]{headline canvas}{}{\vskip0.0225\paperwidth}
+  \end{beamercolorbox}
 }
-%\setbeamertemplate{headline}[normal]
+
 %\setbeamercolor{background canvas}{bg=ucllightgrey}
-
-
-%\setbeamertemplate{background canvas}{\includegraphics[width=\paperwidth]{\bannerUCL}}
-
-% \setbeamertemplate{frametitle} 
-% {
-% \vspace{1.3cm}
-% {\bf \insertframetitle\par}
-% }
-
-
 
 \useinnertheme{rectangles}
 \setbeamertemplate{items}[square]
-\setbeamercolor{title}{bg=colstyle, fg=white}
-\setbeamercolor{structure}{fg=black}
-
-\setbeamercolor{block body}{bg=colstyle!50, fg=black}
-\setbeamercolor{block body alerted}{}
-\setbeamercolor{block body example}{}
-\setbeamercolor{block title}{bg=colstyle, fg=white}
-\setbeamercolor{block title alerted}{}
-\setbeamercolor{block title example}{}
-
-\setbeamercolor{alerted text}{fg=colalert}
-
-
 
 \usepackage{helvet}
