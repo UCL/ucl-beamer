@@ -6,3 +6,4 @@
 *.snm
 *.toc
 !banners/*.pdf
+!csml_logo.pdf

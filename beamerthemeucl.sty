@@ -12,20 +12,17 @@
 \defbeamertemplate*{headline}{ucl}{% for everything else
   \begin{beamercolorbox}[wd=\paperwidth]{headline canvas}
     \includegraphics{banners/\ucl@banner}%
-    % this should be equal to the height of the building in the logo
     \ifbeamercolorempty[bg]{headline canvas}{}{\vskip0.015\paperwidth}
   \end{beamercolorbox}
 }
 
-\defbeamertemplate{headline}{ucllarge}{% for title pages
+\defbeamertemplate{headline}{ucl large}{% for title pages
   % the banner image is 363 * 29 pixels
   \begin{beamercolorbox}{headline canvas}
-    \includegraphics[width=\paperwidth,trim=121 0 0 0]{banners/ucl@banner}%
+    \includegraphics[width=\paperwidth,trim=121 0 0 0]{banners/\ucl@banner}%
     \ifbeamercolorempty[bg]{headline canvas}{}{\vskip0.0225\paperwidth}
   \end{beamercolorbox}
 }
-
-%\setbeamercolor{background canvas}{bg=ucllightgrey}
 
 \useinnertheme{rectangles}
 \setbeamertemplate{items}[square]

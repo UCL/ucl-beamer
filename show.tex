@@ -1,41 +1,54 @@
 \documentclass{beamer}
 
-\usetheme[color=midgreen,blockborder]{ucl}
-\logo{\color{red}\rule{.5cm}{.5cm}}
-%\setbeamercolor{headline canvas}{bg=black}
+\usetheme[color=black,blockborder]{ucl}
 
-% to disable nav symbols
-%\setbeamertemplate{navigation symbols}{} 
+
+%%% Include CSML logo on title slide
+% \titlegraphic{\includegraphics[width=0.16\paperwidth]{csml_logo}}
+
+%%% Include CSML logo in bottom right corner of all slides
+% \logo{\includegraphics[width=0.12\paperwidth]{csml_logo}}
+
+%%% Disable nav symbols, and shift logo down to corner
+% \setbeamertemplate{navigation symbols}{\vspace{-2ex}} 
+
+%%% Set background colour
+% \setbeamercolor{background canvas}{bg=lightgrey}
+
+%%% Add a stripe behind the UCL banner
+% \setbeamercolor{headline canvas}{bg=orange}
+
+
 
 \title{Title of the Presentation}
 \author[]{Author 1 \and Author 2}
-\institute{
-Department of Statistical Science \\ University College London
+\institute{%
+  Department of Statistical Science \\ %
+  University College London
 }
 \date{28 January 2011}
 \setbeamertemplate{headline}[large]
 \begin{document}
 
-{
 
 \begin{frame}
   \titlepage
 \end{frame}
-}
 
 \section{Section 1}
-\frame {
-  \frametitle{First slide}
+
+
+\begin{frame}
+  \frametitle{AA}
   \begin{itemize}
   \item 1
   \item 2
     \pause
   \item \alert{Alert!!}
   \end{itemize}
-}
+\end{frame}
 
-{\definecolor{colstyle}{named}{midgreen}
-\frame {
+\begin{frame}
   \frametitle{Second Slide}
   \framesubtitle{with a subtitle}
   \begin{block}{Block title}
@@ -45,9 +58,10 @@ Department of Statistical Science \\ University College London
   \item 3
   \item 4 
   \end{itemize}
-}
-}
+\end{frame}
+
 \section{Section 2}
+\stepcounter{subsection}
 
 \frame {
   \frametitle{Third Slide}
