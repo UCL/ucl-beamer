@@ -1,0 +1,23 @@
+\setbeamertemplate{headline}[default]
+
+\defbeamertemplate*{frametitle}{banner}{
+  \ifbeamercolorempty[bg]{frametitle}{}{\nointerlineskip}%
+  \@tempdima=\textwidth%
+  \advance\@tempdima by\beamer@leftmargin%
+  \advance\@tempdima by\beamer@rightmargin%
+  \begin{beamercolorbox}[sep=0cm,left,wd=\paperwidth,ht=0.1423\paperwidth]{frametitle}
+    \usebeamerfont{frametitle}%
+    \vbox to0.1423\paperwidth{
+      \includegraphics[width=\paperwidth,trim=121 0 0 0]{banners/\ucl@banner}%
+      \vskip-0.11\paperwidth%
+      \hspace{0.3cm}\strut\insertframetitle\strut\par%
+      {%
+        \ifx\insertframesubtitle\@empty%
+        \else%
+        {\hspace{0.3cm}\usebeamerfont{framesubtitle}\usebeamercolor[fg]{framesubtitle}\insertframesubtitle\strut\par}%
+        \fi
+      }%
+      \vfil%
+    }
+  \end{beamercolorbox}%
+}
