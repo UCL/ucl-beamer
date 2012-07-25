@@ -1,19 +1,28 @@
-\setbeamertemplate{block begin}{%
+% sets the block environment to have borders
+% this modifies the default definition in beamerinnerthemedefault.sty
+% the effect is achieved using nested beamercolorboxes
+% it may be possible to do this in a simpler manner using the 
+% tcolorbox package
+
+
+\defbeamertemplate*{block begin}{bordered}{%
   \par\vskip\medskipamount%
-  \begin{beamercolorbox}[colsep*=.5ex]{block title}%
-    \begin{beamercolorbox}[colsep=0.5ex,dp=0ex]{block title}
+  % border box
+  \begin{beamercolorbox}[colsep*=1.25ex]{block title}%
+    % title box
+    \vskip-1ex
+    \begin{beamercolorbox}[colsep*=0.75ex,dp=0ex]{block title}%
       \usebeamerfont*{block title}\insertblocktitle\par%
-      \vskip0.5ex
     \end{beamercolorbox}%
     {\parskip0pt\par}%
-    \ifbeamercolorempty[bg]{block title}
-    {}
-    {\ifbeamercolorempty[bg]{block body}{}{\nointerlineskip\vskip-0.5pt}}%
+    % body box
     \usebeamerfont{block body}%
-    \begin{beamercolorbox}[sep=1ex,vmode]{block body}%
-      \ifbeamercolorempty[bg]{block body}{\vskip-.25ex}{\vskip-.75ex}\vbox{}%
+    \begin{beamercolorbox}[colsep*=0.75ex]{block body}
+      {\parskip0pt\par}%
     }
-\setbeamertemplate{block end}{%
+\defbeamertemplate*{block end}{bordered}{%
   \end{beamercolorbox}%
-  \end{beamercolorbox}\vskip\smallskipamount%
+  \vskip-0.75ex%
+  \end{beamercolorbox}%
+  \vskip\smallskipamount%
 }
