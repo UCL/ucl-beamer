@@ -1,21 +1,35 @@
 \documentclass{beamer}
+% \usecolortheme{ucl}
+% \useoutertheme{infolines}
 \usetheme{ucl}
+\setbeamersize{text margin left=1.4em,text margin right=1.4em}
 
 
 %%% Change the colour of the main banner
+%%% The background should be one of the UCL colours (except pink or white):
+%%%   black,darkpurple,darkred,darkblue,darkgreen,darkbrown,richred,midred,
+%%%   navyblue,midgreen,darkgrey,orange,brightblue,brightgreen,lightgrey,
+%%%   lightpurple,yellow,lightblue,lightgreen,stone
 % \setbeamercolor{banner}{bg=darkpurple}
 % \setbeamercolor{banner}{bg=yellow,fg=black}
 
 %%% Add a stripe behind the banner (looks best with a black banner)
-%\setbeamercolor{banner stripe}{bg=orange}
+% \setbeamercolor{banner stripe}{bg=midgreen}
+
+% \setbeamercolor{structure}{fg=black}
+
+% \setbeamercolor*{palette primary}{parent={banner,banner stripe}}
+% \setbeamercolor{palette secondary}{bg=lightgreen,fg=darkgreen}
+% \setbeamercolor{palette tertiary}{bg=yellow,fg=darkblue}
+% \setbeamercolor{palette quaternary}{bg=yellow,fg=darkblue}
 
 %%% Puts the frame title in the banner
 % \useoutertheme{ucltitlebanner}
-%%% Similar to above, but smaller and puts subtitle on same line as title
-% \useoutertheme[small]{ucltitlebanner}
+%%% Similar to above, but smaller (and puts subtitle on same line as title)
+\useoutertheme[small]{ucltitlebanner}
 
 %%% Gives block elements (theorems, examples) a border
-% \useinnertheme{blockborder}
+\useinnertheme{blockborder}
 %%% Sets the body of block elements to be clear
 % \setbeamercolor{block body}{bg=white,fg=black}
 
@@ -36,9 +50,9 @@
 \setbeamersize{description width=2em}
 
 
-\title{Title of the Presentation}
-\author[]{Author 1 \and Author 2}
-\institute{%
+\title[Short Title]{Title of the Presentation}
+\author[Auth. 1 \and Auth.2]{Author 1 \and Author 2}
+\institute[UCL]{%
   Department of Statistical Science \\ %
   University College London
 }
@@ -70,16 +84,19 @@
 \begin{frame}
   \frametitle{Second Slide}
   \framesubtitle{with a subtitle}
-  \begin{block}{Block title}
+  \begin{alertblock}{Help!}
     text here
     \begin{itemize}
     \item point 1
     \end{itemize}
-  \end{block}
-  \begin{itemize}
-  \item 3
-  \item 4 
-  \end{itemize}
+  \end{alertblock}
+  
+  \begin{example}
+    \begin{itemize}
+    \item 3
+    \item 4
+    \end{itemize}
+  \end{example}
 \end{frame}
 
 \section{Section 2}

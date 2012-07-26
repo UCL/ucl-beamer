@@ -26,7 +26,7 @@
   }%
   \begin{beamercolorbox}[sep=0cm,left,wd=\paperwidth,ht=\ucl@bannerheight]{banner
       stripe}
-    \usebeamerfont{frametitle}%
+    \usebeamerfont{frametitle}\usebeamercolor[fg]{frametitle}%
     \vbox to\ucl@bannerheight{
       \uclcolorname{banner.bg}{\ucl@bannercolorname}
       \includegraphics [width=\paperwidth,trim=121 0 0 0]{banners/uclbanner\ucl@bannercolorname}%
@@ -57,7 +57,7 @@
   }%
   \begin{beamercolorbox}[sep=0cm,left,wd=\paperwidth,ht=\ucl@bannerheight]{banner
       stripe}
-    \usebeamerfont{frametitle}%
+    \usebeamerfont{frametitle}\usebeamercolor[fg]{frametitle}%
     \vbox to\ucl@bannerheight{
       \uclcolorname{banner.bg}{\ucl@bannercolorname}
       \includegraphics [width=\paperwidth]{banners/uclbanner\ucl@bannercolorname}%
@@ -75,5 +75,15 @@
     }
   \end{beamercolorbox}%
 }
+
+% \addtobeamertemplate{title page}{%
+%   \hspace{1cm}%
+%   \begin{beamercolorbox}{banner stripe}%
+%     \uclcolorname{banner.bg}{\ucl@bannercolorname}%
+%     \includegraphics[width=\paperwidth,trim=121 0 0 0]{banners/uclbanner\ucl@bannercolorname}%
+%     \ifbeamercolorempty[bg]{banner stripe}{}{\vskip0.0225\paperwidth}%
+%   \end{beamercolorbox}%
+% }{}
+
 
 \ProcessOptionsBeamer

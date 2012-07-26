@@ -4,7 +4,7 @@
 % it may be possible to do this in a simpler manner using the 
 % tcolorbox package
 
-
+% Standard block
 \defbeamertemplate*{block begin}{bordered}{%
   \par\vskip\medskipamount%
   % border box
@@ -21,6 +21,51 @@
       {\parskip0pt\par}%
     }
 \defbeamertemplate*{block end}{bordered}{%
+  \end{beamercolorbox}%
+  \vskip-0.75ex%
+  \end{beamercolorbox}%
+  \vskip\smallskipamount%
+}
+
+% Alerted block
+\defbeamertemplate*{block alerted begin}{bordered}{%
+  \par\vskip\medskipamount%
+  % border box
+  \begin{beamercolorbox}[colsep*=1.25ex]{block title alerted}%
+    % title box
+    \vskip-1ex
+    \begin{beamercolorbox}[colsep*=0.75ex,dp=0ex]{block title alerted}%
+      \usebeamerfont*{block title alerted}\insertblocktitle\par%
+    \end{beamercolorbox}%
+    {\parskip0pt\par}%
+    % body box
+    \usebeamerfont{block body alerted}%
+    \begin{beamercolorbox}[colsep*=0.75ex]{block body alerted}
+      {\parskip0pt\par}%
+    }
+\defbeamertemplate*{block alerted end}{bordered}{%
+  \end{beamercolorbox}%
+  \vskip-0.75ex%
+  \end{beamercolorbox}%
+  \vskip\smallskipamount%
+}
+
+\defbeamertemplate*{block example begin}{bordered}{%
+  \par\vskip\medskipamount%
+  % border box
+  \begin{beamercolorbox}[colsep*=1.25ex]{block title example}%
+    % title box
+    \vskip-1ex
+    \begin{beamercolorbox}[colsep*=0.75ex,dp=0ex]{block title example}%
+      \usebeamerfont*{block title example}\insertblocktitle\par%
+    \end{beamercolorbox}%
+    {\parskip0pt\par}%
+    % body box
+    \usebeamerfont{block body example}%
+    \begin{beamercolorbox}[colsep*=0.75ex]{block body example}
+      {\parskip0pt\par}%
+    }
+\defbeamertemplate*{block example end}{bordered}{%
   \end{beamercolorbox}%
   \vskip-0.75ex%
   \end{beamercolorbox}%

@@ -46,23 +46,35 @@
 
 % this is the main variable to customise
 \setbeamercolor{banner}{bg=black,fg=white}
-\setbeamercolor{banner stripe}{use={banner}}
+\setbeamercolor{banner stripe}{use={banner},fg=black}
 
 % title page
 \setbeamercolor{title}{parent=banner}
 
 % used for structural elements
 \setbeamercolor{structure}{fg=black}
-
-\setbeamercolor{block title}{parent=banner}
-\setbeamercolor{block title alerted}{}
-\setbeamercolor{block title example}{}
-\setbeamercolor{block body}{use={block title},bg=block title.bg!30, fg=black}
-\setbeamercolor{block body alerted}{}
-\setbeamercolor{block body example}{}
-
 % used for \alert
 \setbeamercolor{alerted text}{fg=richred}
+% used in the example environment
+\setbeamercolor{example text}{fg=darkgreen}
+
+\setbeamercolor{block title}{parent=banner}
+%%% can use the following for a striped
+% \setbeamercolor{block title}{parent=banner stripe}
+\setbeamercolor{block body}{use=block title,bg=block title.bg!30, fg=black}
+
+\setbeamercolor{block title alerted}{use=alerted text,%
+  bg=alerted text.fg,fg=white}
+\setbeamercolor{block body alerted}{use=block title alerted,%
+  bg=block title alerted.bg!30,fg=black}
+
+\setbeamercolor{block title example}{use=example text,%
+  bg=example text.fg,fg=white}
+\setbeamercolor{block body example}{use=block title example,%
+  bg=block title example.bg!30,fg=black}
+
+
+
 
 
 %\useoutertheme{infolines}
