@@ -1,8 +1,11 @@
 %\mode<presentation>
+\RequirePackage{etoolbox}
 
+% All UCL colors are defined in terms of cmyk
 \selectcolormodel{cmyk}
 
-% define UCL colours
+% Define UCL colours (in addition to black and white)
+%% dark colours: use white text
 \definecolor{darkpurple}{cmyk}{0.32,0.42,0,0.55}
 \definecolor{darkred}{cmyk}{0,1,0.30,0.61}
 \definecolor{darkblue}{cmyk}{1,0.24,0,0.64}
@@ -13,39 +16,52 @@
 \definecolor{navyblue}{cmyk}{1,0.57,0,0.40}
 \definecolor{midgreen}{cmyk}{0.25,0,0.80,0.30}
 \definecolor{darkgrey}{cmyk}{0,0.09,0.16,0.43}
-\definecolor{pink}{cmyk}{0,1,0.35,0.27} % defined in UCL corporate identity, but no corresponding banner
+\definecolor{pink}{cmyk}{0,1,0.35,0.27} % no banner image
 \definecolor{orange}{cmyk}{0,0.45,0.91,0} 
 \definecolor{brightblue}{cmyk}{0.92,0,0.15,0.05}
 \definecolor{brightgreen}{cmyk}{0.12,0,0.79,0.06}
 \definecolor{lightgrey}{cmyk}{0,0.04,0.09,0.24}
-% use black text on the following
+%% light colours: use black text
 \definecolor{lightpurple}{cmyk}{0.17,0.25,0.15,0}
 \definecolor{yellow}{cmyk}{0,0.25,0.95,0}
 \definecolor{lightblue}{cmyk}{0.27,0.03,0,0.13}
 \definecolor{lightgreen}{cmyk}{0.14,0,0.36,0.10}
 \definecolor{stone}{cmyk}{0,0.02,0.06,0.07}
 
-\DeclareOptionBeamer{color}{%
-  \setbannercolor{#1}%
-  \definecolor{colstyle}{named}{#1}
+% Determines the UCL colour name of the template in the 1st argument, and
+% stores it in the 2nd argument.
+% This is used to determine which banner image should be included
+\newcommand\uclcolorname[2]{%
+  \extractcolorspec{#1}{\ucl@colorspec@current}%
+  \forcsvlist{\ucl@colorcheck{#2}}{black,white,darkpurple,darkred,darkblue,%
+    darkgreen,darkbrown,richred,midred,navyblue,midgreen,darkgrey,pink,%
+    orange,brightblue,brightgreen,lightgrey,lightpurple,yellow,lightblue,%
+    lightgreen,stone}%
 }
-% defaults
-\setbannercolor{black}%
-\definecolor{colstyle}{named}{black}
+% a utility function called by \uclcolorname
+\newcommand\ucl@colorcheck[2]{%
+  \extractcolorspec{#2}{\ucl@colorspec@check}%
+  \ifdefequal{\ucl@colorspec@check}{\ucl@colorspec@current}{\gdef#1{#2}}{}%
+}
 
-\ProcessOptionsBeamer
+% this is the main variable to customise
+\setbeamercolor{banner}{bg=black,fg=white}
+\setbeamercolor{banner stripe}{use={banner}}
 
-\setbeamercolor{title}{bg=colstyle, fg=white}
+% title page
+\setbeamercolor{title}{parent=banner}
+
+% used for structural elements
 \setbeamercolor{structure}{fg=black}
-%\setbeamercolor{headline}{bg=midgreen}
 
-\setbeamercolor{block body}{bg=colstyle!50, fg=black}
-\setbeamercolor{block body alerted}{}
-\setbeamercolor{block body example}{}
-\setbeamercolor{block title}{bg=colstyle, fg=white}
+\setbeamercolor{block title}{parent=banner}
 \setbeamercolor{block title alerted}{}
 \setbeamercolor{block title example}{}
+\setbeamercolor{block body}{use={block title},bg=block title.bg!30, fg=black}
+\setbeamercolor{block body alerted}{}
+\setbeamercolor{block body example}{}
 
+% used for \alert
 \setbeamercolor{alerted text}{fg=richred}
 
 

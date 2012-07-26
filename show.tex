@@ -1,7 +1,23 @@
 \documentclass{beamer}
-
 \usetheme{ucl}
 
+
+%%% Change the colour of the main banner
+% \setbeamercolor{banner}{bg=darkpurple}
+% \setbeamercolor{banner}{bg=yellow,fg=black}
+
+%%% Add a stripe behind the banner (looks best with a black banner)
+%\setbeamercolor{banner stripe}{bg=orange}
+
+%%% Puts the frame title in the banner
+% \useoutertheme{ucltitlebanner}
+%%% Similar to above, but smaller and puts subtitle on same line as title
+% \useoutertheme[small]{ucltitlebanner}
+
+%%% Gives block elements (theorems, examples) a border
+% \useinnertheme{blockborder}
+%%% Sets the body of block elements to be clear
+% \setbeamercolor{block body}{bg=white,fg=black}
 
 %%% Include CSML logo on title slide
 % \titlegraphic{\includegraphics[width=0.16\paperwidth]{csml_logo}}
@@ -9,14 +25,15 @@
 %%% Include CSML logo in bottom right corner of all slides
 % \logo{\includegraphics[width=0.12\paperwidth]{csml_logo}}
 
-%%% Disable nav symbols, and shift logo down to corner
-% \setbeamertemplate{navigation symbols}{\vspace{-2ex}} 
 
 %%% Set background colour
 % \setbeamercolor{background canvas}{bg=lightgrey}
 
-%%% Add a stripe behind the UCL banner
-% \setbeamercolor{headline canvas}{bg=orange}
+%%%%%% Some other settings that can make things look nicer
+%%% Remove nav symbols (and shift any logo down to corner)
+\setbeamertemplate{navigation symbols}{\vspace{-2ex}} 
+%%% Set a smaller indent for description environment
+\setbeamersize{description width=2em}
 
 
 \title{Title of the Presentation}
@@ -26,19 +43,22 @@
   University College London
 }
 \date{28 January 2011}
-\setbeamertemplate{headline}[large]
+
 \begin{document}
 
 
 \begin{frame}
+  \frametitle{}
   \titlepage
 \end{frame}
 
 \section{Section 1}
 
-
 \begin{frame}
   \frametitle{AA}
+  % \uclcolorname{banner.fg}
+  % \uclbannercolor
+  % \uclbannercolor
   \begin{itemize}
   \item 1
   \item 2
@@ -52,6 +72,9 @@
   \framesubtitle{with a subtitle}
   \begin{block}{Block title}
     text here
+    \begin{itemize}
+    \item point 1
+    \end{itemize}
   \end{block}
   \begin{itemize}
   \item 3
@@ -80,14 +103,33 @@
 
 \frame {
   \frametitle{Conclusions}
+  \begin{block}{A block}
+    An environment inside the block
+    \begin{description}
+    \item[The first step:] This is a very long description, and will wrap onto
+      the next line
+    \item[Step B:] text
+    \end{description}
+
+    \begin{itemize}
+    \item a
+    \item b
+    \end{itemize}
+  \end{block}
   \begin{itemize}
   \item 
+  \item 
+  \item
+  \item
+  \item
+  \item
   \item 
   \end{itemize}
 }
 
 \frame {
   \frametitle{Acknowledgements}
+
 }
 
 \end{document}

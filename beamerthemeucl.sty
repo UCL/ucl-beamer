@@ -1,30 +1,27 @@
-\def\setbannercolor#1{\gdef\ucl@banner{uclbanner#1}}
-\def\ucl@banner{\@latex@error{\noexpand\setbannercolor not set}\@ehc}
-
-\DeclareOptionBeamer{color}{\PassOptionsToPackage{color=#1}{beamercolorthemeucl}}
-\DeclareOptionBeamer{blockborder}{\useinnertheme{blockborder}}
-
-\ProcessOptionsBeamer
 
 \usetheme{default}
 \usecolortheme{ucl}
 
 \defbeamertemplate*{headline}{ucl}{% for everything else
-  \begin{beamercolorbox}[wd=\paperwidth]{headline canvas}
-    \includegraphics{banners/\ucl@banner}%
-    \ifbeamercolorempty[bg]{headline canvas}{}{\vskip0.015\paperwidth}
+  \begin{beamercolorbox}[wd=\paperwidth]{banner stripe}
+    \uclcolorname{banner.bg}{\ucl@bannercolorname}
+    \includegraphics{banners/uclbanner\ucl@bannercolorname}%
+    \ifbeamercolorempty[bg]{banner stripe}{}{\vskip0.015\paperwidth}
   \end{beamercolorbox}
 }
 
-\defbeamertemplate{headline}{ucl large}{% for title pages
+\defbeamertemplate{headline}{ucl large}{% 50% higher
   % the banner image is 363 * 29 pixels
-  \begin{beamercolorbox}{headline canvas}
-    \includegraphics[width=\paperwidth,trim=121 0 0 0]{banners/\ucl@banner}%
-    \ifbeamercolorempty[bg]{headline canvas}{}{\vskip0.0225\paperwidth}
+  \begin{beamercolorbox}{banner stripe}
+    \uclcolorname{banner.bg}{\ucl@bannercolorname}
+    \includegraphics[width=\paperwidth,trim=121 0 0 0]{banners/uclbanner\ucl@bannercolorname}%
+    \ifbeamercolorempty[bg]{banner stripe}{}{\vskip0.0225\paperwidth}
   \end{beamercolorbox}
 }
 
 \useinnertheme{rectangles}
 \setbeamertemplate{items}[square]
 
+% use the Helvetica font
+% the UCL font is actually Arial, but I can't get it to work properly
 \usepackage{helvet}

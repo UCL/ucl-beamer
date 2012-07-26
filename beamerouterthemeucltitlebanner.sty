@@ -1,14 +1,36 @@
+% Puts the frame title in the banner
+% TODO:
+% title page
+
+\DeclareOptionBeamer{small}{%
+  \setbeamertemplate{frametitle}[ucl banner small]%
+}
+
+
+
+% reset headline to default
 \setbeamertemplate{headline}[default]
 
-\defbeamertemplate*{frametitle}{banner}{
+% set the colours from headline
+\setbeamercolor{frametitle}{parent=banner}
+
+\defbeamertemplate*{frametitle}{ucl banner}{
   \ifbeamercolorempty[bg]{frametitle}{}{\nointerlineskip}%
   \@tempdima=\textwidth%
   \advance\@tempdima by\beamer@leftmargin%
   \advance\@tempdima by\beamer@rightmargin%
-  \begin{beamercolorbox}[sep=0cm,left,wd=\paperwidth,ht=0.1423\paperwidth]{frametitle}
+  \ifbeamercolorempty[bg]{banner stripe}{%
+    \def\ucl@bannerheight{0.1199\paperwidth}%
+  }{%
+    \def\ucl@bannerheight{0.1423\paperwidth}%
+  }%
+  \begin{beamercolorbox}[sep=0cm,left,wd=\paperwidth,ht=\ucl@bannerheight]{banner
+      stripe}
     \usebeamerfont{frametitle}%
-    \vbox to0.1423\paperwidth{
-      \includegraphics[width=\paperwidth,trim=121 0 0 0]{banners/\ucl@banner}%
+    \vbox to\ucl@bannerheight{
+      \uclcolorname{banner.bg}{\ucl@bannercolorname}
+      \includegraphics [width=\paperwidth,trim=121 0 0 0]{banners/uclbanner\ucl@bannercolorname}%
+
       \vskip-0.11\paperwidth%
       \hspace{0.3cm}\strut\insertframetitle\strut\par%
       {%
@@ -21,3 +43,37 @@
     }
   \end{beamercolorbox}%
 }
+
+% the small version
+\defbeamertemplate{frametitle}{ucl banner small}{
+  \ifbeamercolorempty[bg]{frametitle}{}{\nointerlineskip}%
+  \@tempdima=\textwidth%
+  \advance\@tempdima by\beamer@leftmargin%
+  \advance\@tempdima by\beamer@rightmargin%
+  \ifbeamercolorempty[bg]{banner stripe}{%
+    \def\ucl@bannerheight{0.0799\paperwidth}%
+  }{%
+    \def\ucl@bannerheight{0.0949\paperwidth}%
+  }%
+  \begin{beamercolorbox}[sep=0cm,left,wd=\paperwidth,ht=\ucl@bannerheight]{banner
+      stripe}
+    \usebeamerfont{frametitle}%
+    \vbox to\ucl@bannerheight{
+      \uclcolorname{banner.bg}{\ucl@bannercolorname}
+      \includegraphics [width=\paperwidth]{banners/uclbanner\ucl@bannercolorname}%
+
+      \vskip-0.07\paperwidth%
+      \hspace{0.3cm}\strut\insertframetitle\strut%
+      {%
+        \ifx\insertframesubtitle\@empty%
+        \else%
+        {\hspace{0.3cm}\usebeamerfont{framesubtitle}\usebeamercolor[fg]{framesubtitle}\insertframesubtitle\strut}%
+        \fi
+      }%
+      \par%
+      \vfil%
+    }
+  \end{beamercolorbox}%
+}
+
+\ProcessOptionsBeamer
