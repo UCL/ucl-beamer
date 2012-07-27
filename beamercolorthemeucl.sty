@@ -73,12 +73,21 @@
 \setbeamercolor{block body example}{use=block title example,%
   bg=block title example.bg!30,fg=black}
 
+% used for section and miniframes styles
+\setbeamercolor*{section in head/foot}{use=banner,%
+  fg=banner.fg!70!banner.bg,bg=banner.fg!20!banner.bg}
+\setbeamercolor*{subsection in head/foot}{use=banner,%
+  fg=banner.fg!50!banner.bg,bg=banner.fg!20!banner.bg}
 
+\setbeamercolor*{author in head/foot}{parent=palette tertiary}
+\setbeamercolor*{title in head/foot}{parent=palette secondary}
+\setbeamercolor*{date in head/foot}{parent=palette primary}
 
+\setbeamercolor*{palette primary}{parent={banner}}
+\setbeamercolor*{palette secondary}{use=palette primary,%
+  fg=palette primary.fg!80,bg=palette primary.bg!80}
+\setbeamercolor*{palette tertiary}{use=palette primary,%
+  fg=palette primary.fg!60,bg=palette primary.bg!60}
 
-
-%\useoutertheme{infolines}
-%\setbeamercolor{structure}{fg=green,bg=red}
-%\setbeamercolor{palette primary}{fg=green,bg=red}
 
 %\mode<all>

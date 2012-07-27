@@ -3,29 +3,110 @@
 %  headline: section/subsection information
 %  headline miniframe: miniframes
 
-
 \usetheme{default}
 \usecolortheme{ucl}
 
-\defbeamertemplate*{headline}{ucl}{% for everything else
-  \begin{beamercolorbox}[wd=\paperwidth]{banner stripe}
-    \uclcolorname{banner.bg}{\ucl@bannercolorname}
-    \includegraphics{banners/uclbanner\ucl@bannercolorname}%
-    \ifbeamercolorempty[bg]{banner stripe}{}{\vskip0.015\paperwidth}
-  \end{beamercolorbox}
+% the height of the banner image
+\newlength\bannerheight
+% the height of the banner stripe: should be the height of the tower
+\newlength\stripeheight
+
+% standard size
+\defbeamertemplate*{banner}{small}{%
+  \uclcolorname{banner.bg}{\ucl@bannercolorname}%
+  \includegraphics[width=\paperwidth]% 
+  {banners/uclbanner\ucl@bannercolorname}%
+}
+[action]{%
+  \settoheight\bannerheight{\usebeamertemplate*{banner}}  
+  \setlength\stripeheight{0.1875\bannerheight}
 }
 
-\defbeamertemplate{headline}{ucl large}{% 50% higher
-  % the banner image is 363 * 29 pixels
-  \begin{beamercolorbox}{banner stripe}
-    \uclcolorname{banner.bg}{\ucl@bannercolorname}
-    \includegraphics[width=\paperwidth,trim=121 0 0 0]{banners/uclbanner\ucl@bannercolorname}%
-    \ifbeamercolorempty[bg]{banner stripe}{}{\vskip0.0225\paperwidth}
-  \end{beamercolorbox}
+% larger version
+\defbeamertemplate{banner}{large}{%
+  \uclcolorname{banner.bg}{\ucl@bannercolorname}%
+  % full banner image is 363 * 29 pixels
+  \includegraphics[width=\paperwidth,trim=121 0 0 0]% 
+  {banners/uclbanner\ucl@bannercolorname}%
+}
+[action]{%
+  \settoheight\bannerheight{\usebeamertemplate*{banner}}  
+  \setlength\stripeheight{0.1875\bannerheight}
 }
 
-\useinnertheme{rectangles}
-\setbeamertemplate{items}[square]
+% draw the banner on the background
+\defbeamertemplate*{background}{ucl}{% for everything else
+  \hspace{\beamer@leftmargin}%
+  \begin{beamercolorbox}[wd=\paperwidth]{banner stripe}%
+    \usebeamertemplate*{banner}\par%
+    \ifbeamercolorempty[bg]{banner stripe}{}{\vspace{\stripeheight}}%
+  \end{beamercolorbox}%
+}
+
+
+% The default headline is just empty space.
+% this ensures content doesn't overlap
+\defbeamertemplate*{headline}{ucl}{%
+  \vspace{\bannerheight}%
+  \ifbeamercolorempty[bg]{banner stripe}{}{\vspace{\stripeheight}}%
+}  
+
+
+% Section / Subsection
+\defbeamertemplate{headline}{section}{%
+  \begin{beamercolorbox}[ignorebg,ht=\bannerheight]{section in head/foot}%
+    \vbox to\bannerheight{
+      \vspace{1em}%
+      \usebeamerfont{section in head/foot}%
+      \hspace{1em}\insertsectionhead%
+      \ifx\insertsubsectionhead\@empty%
+      \else%
+      {\usebeamerfont{subsection in head/foot}%
+        \usebeamercolor[fg]{subsection in head/foot}%
+        \,/\,\insertsubsectionhead}%
+      \fi%      
+      \par%
+      \vfil}%
+  \end{beamercolorbox}%
+  \ifbeamercolorempty[bg]{banner stripe}{}{\vspace{\stripeheight}}%
+}  
+
+% Miniframes
+\defbeamertemplate{headline}{miniframes}[1][0.6]{% 
+  \begin{beamercolorbox}[ignorebg,ht=\bannerheight]{section in head/foot}%
+    \vbox to\bannerheight{
+      \vspace{1ex}%
+      \insertnavigation{#1\paperwidth}%
+      \par%
+      \vfil}%
+  \end{beamercolorbox}%
+  \ifbeamercolorempty[bg]{banner stripe}{}{\vspace{\stripeheight}}%
+}
+% use boxes instead of circles
+\setbeamertemplate{mini frames}[box]
+
+\defbeamertemplate{footline}{author title date}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor\expandafter\beamer@ifempty\expandafter{\beamer@shortinstitute}{}{~~(\insertshortinstitute)}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+
+% Reduce margins
+\setbeamersize{text margin left=1.4em,text margin right=1.4em}
+
+% make everything rectangle-y
+% \useinnertheme{rectangles}
 
 % use the Helvetica font
 % the UCL font is actually Arial, but I can't get it to work properly
