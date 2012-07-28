@@ -13,13 +13,10 @@
 % \setbeamercolor{banner}{bg=yellow,fg=black}
 
 %%% Add a stripe behind the banner
-% \setbeamercolor{banner stripe}{bg=brightblue}
+% \setbeamercolor{banner stripe}{bg=brightblue,fg=black}
 
 %%% The main structural elements
 % \setbeamercolor{structure}{fg=black}
-
-% \setbeamercolor{palette tertiary}{bg=yellow,fg=darkblue}
-% \setbeamercolor{palette quaternary}{bg=yellow,fg=darkblue}
 
 %%% Author/Title/Date and slide number in the footline
 % \setbeamertemplate{footline}[author title date]
@@ -32,10 +29,11 @@
 %%% followed by a \subsection. Requires one extra compile.
 % \setbeamertemplate{headline}[miniframes]
 %%% Accepts an optional argument determining the proportional width
-% \setbeamertemplate{headline}[miniframes][0.5]
+% \setbeamertemplate{headline}[miniframes][0.3]
 
 
 %%% Puts the frame title in the banner
+%%% Won't work correctly with the headline options above
 % \useoutertheme{ucltitlebanner}
 %%% Similar to above, but smaller (and puts subtitle on same line as title)
 % \useoutertheme[small]{ucltitlebanner}
@@ -50,7 +48,6 @@
 
 %%% Include CSML logo in bottom right corner of all slides
 % \logo{\includegraphics[width=0.12\paperwidth]{csml_logo}}
-
 
 %%% Set a background colour
 % \setbeamercolor{background canvas}{bg=lightgrey}

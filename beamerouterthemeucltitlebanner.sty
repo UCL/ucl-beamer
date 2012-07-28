@@ -3,87 +3,66 @@
 % title page
 
 \DeclareOptionBeamer{small}{%
-  \setbeamertemplate{frametitle}[ucl banner small]%
+  \setbeamertemplate{banner}[small]%
+  \setbeamertemplate{frametitle}[one line]%
 }
-
-
+\DeclareOptionBeamer{large}{%
+  \setbeamertemplate{banner}[large]%
+  \setbeamertemplate{frametitle}[two lines]%
+}
 
 % reset headline to default
 \setbeamertemplate{headline}[default]
 
-% set the colours from headline
-\setbeamercolor{frametitle}{parent=banner}
+% set the colours from banner
+\setbeamercolor*{frametitle}{use=banner,fg=banner.fg}
 
-\defbeamertemplate*{frametitle}{ucl banner}{
-  \ifbeamercolorempty[bg]{frametitle}{}{\nointerlineskip}%
-  \@tempdima=\textwidth%
-  \advance\@tempdima by\beamer@leftmargin%
-  \advance\@tempdima by\beamer@rightmargin%
-  \ifbeamercolorempty[bg]{banner stripe}{%
-    \def\ucl@bannerheight{0.1199\paperwidth}%
-  }{%
-    \def\ucl@bannerheight{0.1423\paperwidth}%
-  }%
-  \begin{beamercolorbox}[sep=0cm,left,wd=\paperwidth,ht=\ucl@bannerheight]{banner
-      stripe}
-    \usebeamerfont{frametitle}\usebeamercolor[fg]{frametitle}%
-    \vbox to\ucl@bannerheight{
-      \uclcolorname{banner.bg}{\ucl@bannercolorname}
-      \includegraphics [width=\paperwidth,trim=121 0 0 0]{banners/uclbanner\ucl@bannercolorname}%
-
-      \vskip-0.11\paperwidth%
-      \hspace{0.3cm}\strut\insertframetitle\strut\par%
+% puts the title on one line, and subtitle below
+\defbeamertemplate{frametitle}{two lines}{%
+  \begin{beamercolorbox}[ignorebg,ht=\bannerheight]{frametitle}%
+    \vbox to\bannerheight{
+      \vspace{1ex}%
+      \usebeamerfont{frametitle}\usebeamercolor[fg]{frametitle}%
+      \strut\insertframetitle\strut\par%
       {%
         \ifx\insertframesubtitle\@empty%
         \else%
-        {\hspace{0.3cm}\usebeamerfont{framesubtitle}\usebeamercolor[fg]{framesubtitle}\insertframesubtitle\strut\par}%
+        {\usebeamerfont{framesubtitle}\usebeamercolor[fg]{framesubtitle}\insertframesubtitle\strut\par}%
         \fi
       }%
       \vfil%
     }
-  \end{beamercolorbox}%
-}
+    \end{beamercolorbox}
+    \ifbeamercolorempty[bg]{banner stripe}{}{\vspace{\stripeheight}}%
+  }
 
-% the small version
-\defbeamertemplate{frametitle}{ucl banner small}{
-  \ifbeamercolorempty[bg]{frametitle}{}{\nointerlineskip}%
-  \@tempdima=\textwidth%
-  \advance\@tempdima by\beamer@leftmargin%
-  \advance\@tempdima by\beamer@rightmargin%
-  \ifbeamercolorempty[bg]{banner stripe}{%
-    \def\ucl@bannerheight{0.0799\paperwidth}%
-  }{%
-    \def\ucl@bannerheight{0.0949\paperwidth}%
-  }%
-  \begin{beamercolorbox}[sep=0cm,left,wd=\paperwidth,ht=\ucl@bannerheight]{banner
-      stripe}
-    \usebeamerfont{frametitle}\usebeamercolor[fg]{frametitle}%
-    \vbox to\ucl@bannerheight{
-      \uclcolorname{banner.bg}{\ucl@bannercolorname}
-      \includegraphics [width=\paperwidth]{banners/uclbanner\ucl@bannercolorname}%
-
-      \vskip-0.07\paperwidth%
-      \hspace{0.3cm}\strut\insertframetitle\strut%
+% puts the title and subtitle on the same line
+\defbeamertemplate{frametitle}{one line}{%
+  \begin{beamercolorbox}[ignorebg,ht=\bannerheight]{frametitle}%
+    \vbox to\bannerheight{
+      \vspace{1ex}%
+      \usebeamerfont{frametitle}\usebeamercolor[fg]{frametitle}%
+      \strut\insertframetitle\strut%
       {%
         \ifx\insertframesubtitle\@empty%
         \else%
-        {\hspace{0.3cm}\usebeamerfont{framesubtitle}\usebeamercolor[fg]{framesubtitle}\insertframesubtitle\strut}%
+        {\hspace{0.6em}\usebeamerfont{framesubtitle}\usebeamercolor[fg]{framesubtitle}\insertframesubtitle\strut}%
         \fi
       }%
       \par%
       \vfil%
     }
-  \end{beamercolorbox}%
-}
-
-% \addtobeamertemplate{title page}{%
-%   \hspace{1cm}%
-%   \begin{beamercolorbox}{banner stripe}%
-%     \uclcolorname{banner.bg}{\ucl@bannercolorname}%
-%     \includegraphics[width=\paperwidth,trim=121 0 0 0]{banners/uclbanner\ucl@bannercolorname}%
-%     \ifbeamercolorempty[bg]{banner stripe}{}{\vskip0.0225\paperwidth}%
-%   \end{beamercolorbox}%
-% }{}
+  \end{beamercolorbox}
+  \ifbeamercolorempty[bg]{banner stripe}{}{\vspace{\stripeheight}}%
+  }
 
 
+% this ensures the title page doesn't overlap the banner
+\addtobeamertemplate{title page}{%
+  \vspace{\bannerheight}%
+  \ifbeamercolorempty[bg]{banner stripe}{}{\vspace{\stripeheight}}%
+}{}
+
+
+\ExecuteOptionsBeamer{large}
 \ProcessOptionsBeamer
