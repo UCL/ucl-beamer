@@ -1,41 +1,18 @@
-UCL Beamer laTex Template
+UCL LaTeX Beamer theme
 
-In the enclosed files and folders are three example .sty files and banners for each of these styles. Also attached are all the other colours of UCL banner for making new .sty files in different colour schemes. 
+by Simon Byrne (based on the original template by Maurizio Filippone)
 
-Please read the attached template instructions for advice on text styles and UCL branding.
+These files form a theme for the Beamer package in LaTeX that is a close
+approximation to the UCL Corporate Identity. The usage of the theme and its
+options are given in the file show.tex.
 
-Thanks to Maurizio Fillippone for putting these together.
+To use once, simply put the files in the directory of your document.
 
-UCL Communications and Marketing
+A more permanent solution is to put the files somewhere in your texmf tree. To
+find out what this is in your system, type the command:
 
+  kpsewhich -var-value TEXMFHOME
 
-The "approved" UCL colours are:
-- black
-- white
+An appropriate place would be <texmf>/tex/latex/uclbeamer
 
-- darkpurple
-- darkred
-- darkblue
-- darkgreen
-- darkbrown
-
-- richred
-- midred
-- navyblue
-- midgreen
-- darkgrey
-
-- pink
-- orange
-- brightblue
-- brightgreen
-- lightgrey
-
-- lightpurple
-- yellow
-- lightblue
-- lightgreen
-- stone 
-
-all of these can be used as a main theme colour, except white and pink (as
-there are no banner images for these colours)
+If you notice any bugs, contact simon.byrne@ucl.ac.uk
