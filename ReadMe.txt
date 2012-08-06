@@ -24,6 +24,10 @@ Use
 
 The usage of the theme and its many options are given in the file `sample.tex`. 
 
+It can also be used for constructing a poster: a rough implementation is given
+in `sample-poster.tex`, however there are still some issues with spacing that
+I am trying to sort out.
+
 
 Notes
 =====

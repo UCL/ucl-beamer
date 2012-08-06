@@ -4,8 +4,8 @@
 \usetheme{uclposter}
 
 
-% \useinnertheme{blockborder}
-% \setbeamercolor{block body}{bg=white,fg=black}
+\useinnertheme{blockborder}
+\setbeamercolor{block body}{bg=white,fg=black}
 
 
 \title{Title of the Poster}
@@ -18,16 +18,22 @@
 % \beamertemplategridbackground[1cm]
 
 \setbeamersize{text margin left=2cm,text margin right=2cm}
+
+\newlength\blockcolsep
+\setlength\blockcolsep{2ex}
 \newlength\postercolumnsep
 \setlength\postercolumnsep{2cm}
 
 \newlength\postercolumnwidth
 \setlength\postercolumnwidth{0.3333\textwidth-0.66666\postercolumnsep}
 
+\newlength\totalwidth
+\setlength\totalwidth{\textwidth+3ex}
+
 \begin{document}
 \begin{frame}[t]{}
 \centering
-\begin{columns}[onlytextwidth]
+\begin{columns}[totalwidth=\totalwidth]
   \begin{column}[t]{\postercolumnwidth}
     \centering
     \begin{block}{Step 1}
