@@ -1,0 +1,90 @@
+\documentclass{beamer} 
+\usepackage[orientation=landscape,size=a1]{beamerposter}
+
+\usetheme{uclposter}
+
+
+% \useinnertheme{blockborder}
+% \setbeamercolor{block body}{bg=white,fg=black}
+
+
+\title{Title of the Poster}
+\author{Author 1 and Author 2}
+\institute{%
+  Department of Statistical Science,
+  University College London
+}
+
+% \beamertemplategridbackground[1cm]
+
+\setbeamersize{text margin left=2cm,text margin right=2cm}
+\newlength\postercolumnsep
+\setlength\postercolumnsep{2cm}
+
+\newlength\postercolumnwidth
+\setlength\postercolumnwidth{0.3333\textwidth-0.66666\postercolumnsep}
+
+\begin{document}
+\begin{frame}[t]{}
+\centering
+\begin{columns}[onlytextwidth]
+  \begin{column}[t]{\postercolumnwidth}
+    \centering
+    \begin{block}{Step 1}
+      Some content
+    \end{block}
+    %
+    \begin{block}{Step 2}
+      \begin{itemize}
+      \item Item 1
+      \item Item 2
+      \end{itemize}
+    \end{block}
+    % 
+    \begin{block}{Step 3}
+      Sample
+    \end{block}
+  \end{column}  
+  %
+  \begin{column}[t]{\postercolumnwidth}
+    \centering
+    \begin{block}{Step 1}
+      Some content
+    \end{block}
+    % 
+    \begin{block}{Step 2}
+      \begin{itemize}
+      \item Item 1
+      \item Item 2
+      \end{itemize}
+    \end{block}
+    % 
+    \begin{block}{Step 3}
+      Sample
+    \end{block}
+  \end{column}
+  %
+  \begin{column}[t]{\postercolumnwidth}
+    \centering
+    \begin{block}{Step 1}
+      Some content
+    \end{block}
+    
+    \begin{block}{Step 2}
+      \begin{itemize}
+      \item Item 1
+      \item Item 2
+      \end{itemize}
+    \end{block}
+
+    \begin{block}{Step 3}
+      Sample
+    \end{block}
+  \end{column}
+ \end{columns}
+
+\end{frame}
+
+
+
+\end{document}

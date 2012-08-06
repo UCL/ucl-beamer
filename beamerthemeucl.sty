@@ -1,35 +1,22 @@
-% TODO:
-%  footline: puts footline of infolines in presentation
-%  headline: section/subsection information
-%  headline miniframe: miniframes
-
 \usetheme{default}
 \usecolortheme{ucl}
+\RequirePackage{calc}
 
-% the height of the banner image
+% the height of the banner when scaled
 \newlength\bannerheight
 % the height of the banner stripe: should be the height of the tower
 \newlength\stripeheight
+% the amount to trim off the banner (pre-scaling)
+\newlength\bannerimagetrim
 
-% standard size
-\defbeamertemplate*{banner}{small}{%
+% UCL banner template
+\defbeamertemplate*{banner}{ucl}[1][1]{%
   \uclcolorname{banner.bg}{\ucl@bannercolorname}%
-  \includegraphics[width=\paperwidth]% 
+  \includegraphics[width=\paperwidth,trim=\bannerimagetrim{} 0 0 0]% 
   {banners/uclbanner\ucl@bannercolorname}%
 }
-[action]{%
-  \settoheight\bannerheight{\usebeamertemplate*{banner}}  
-  \setlength\stripeheight{0.1875\bannerheight}
-}
-
-% larger version
-\defbeamertemplate{banner}{large}{%
-  \uclcolorname{banner.bg}{\ucl@bannercolorname}%
-  % full banner image is 363 * 29 pixels
-  \includegraphics[width=\paperwidth,trim=121 0 0 0]% 
-  {banners/uclbanner\ucl@bannercolorname}%
-}
-[action]{%
+[action]{% set lengths when loading template
+  \setlength\bannerimagetrim{363bp-363bp/\real{#1}}
   \settoheight\bannerheight{\usebeamertemplate*{banner}}  
   \setlength\stripeheight{0.1875\bannerheight}
 }

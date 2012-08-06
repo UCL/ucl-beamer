@@ -4,6 +4,10 @@
 % it may be possible to do this in a simpler manner using the 
 % tcolorbox package
 
+\defbeamertemplateparent{blocks}[bordered]{block begin,block end,%
+  block alerted begin,block alerted end,%
+  block example begin,block example end}{}
+
 % Standard block
 \defbeamertemplate*{block begin}{bordered}{%
   \par\vskip\medskipamount%

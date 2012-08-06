@@ -1,0 +1,34 @@
+\usetheme{ucl}
+
+% disable nav symbols
+\setbeamertemplate{navigation symbols}{} 
+
+% puts the title on one line, and subtitle below
+\defbeamertemplate*{headline}{poster}{%
+  \hspace{2em}
+  \begin{beamercolorbox}[ignorebg,ht=\bannerheight,sep=1em]{headline}%
+    % \vbox to\bannerheight{
+    %   \vspace{0.1\bannerheight}%
+      \usebeamerfont{title}\usebeamercolor[fg]{title}%
+      \strut\inserttitle\strut\par%
+      \usebeamerfont{author}\usebeamercolor[fg]{author}%
+      \strut\insertauthor\strut\par%
+      \usebeamerfont{institute}\usebeamercolor[fg]{institute}%
+      \strut\insertinstitute\strut\par%
+    %   \vfil%
+    % }
+    \end{beamercolorbox}
+    \ifbeamercolorempty[bg]{banner stripe}{}{\vspace{\stripeheight}}%
+  }
+
+
+\setbeamercolor*{headline}{parent=banner}
+\setbeamercolor*{author}{parent=banner}
+\setbeamercolor*{institute}{parent=banner}
+
+\setbeamerfont{title}{size=\huge}
+\setbeamerfont{author}{size=\Large}
+\setbeamerfont{institute}{size=\normalsize}
+
+
+% Reduce margins
