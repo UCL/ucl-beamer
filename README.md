@@ -37,20 +37,19 @@ By default, the package uses the Helvetica font, as Arial (the official UCL
 typeface) is not installed on most TeX distributions. If you really want
 Arial, then I managed to get it working using the following steps:
 
-1. Install the font using the `getnonfreefonts` script:
-
-    http://www.tug.org/fonts/getnonfreefonts/
+1. Install the font using the `getnonfreefonts` script from http://www.tug.org/fonts/getnonfreefonts/.
 
 2. You may need to run the following line:
-
-    updmap-sys --enable Map=ua1.map
+```
+updmap-sys --enable Map=ua1.map
+```
 
 3. Add the following lines to the preamble of your document:
-
-    \usepackage[T1]{fontenc}
-    \usepackage{uarial}
-    \renewcommand{\familydefault}{\sfdefault}
-
+```latex
+\usepackage[T1]{fontenc}
+\usepackage{uarial}
+\renewcommand{\familydefault}{\sfdefault}
+```
 
 If you're wondering how to tell them apart, the only difference I could
 discern was that Arial doesn't have the downstroke on the G.
@@ -59,9 +58,9 @@ discern was that Arial doesn't have the downstroke on the G.
 Support
 -------
 
-Requires a reasonably modern TeX installation. If you're having any problems,
+Requires a reasonably modern TeX installation (it has onlyt been tested on MacTeX 2012). If you're having any problems,
 try upgrading.
 
 This is completely unofficial, and not supported by UCL. If you notice any
 bugs however, contact simon.byrne@ucl.ac.uk, and I shall do my best to fix
-them.
+them. Of course, any contributions are also welcome.
