@@ -58,7 +58,7 @@ discern was that Arial doesn't have the downstroke on the G.
 Support
 -------
 
-Requires a reasonably modern TeX installation (it has onlyt been tested on MacTeX 2012). If you're having any problems,
+Requires a reasonably modern TeX installation (it has only been tested on MacTeX 2012). If you're having any problems,
 try upgrading.
 
 This is completely unofficial, and not supported by UCL. If you notice any
