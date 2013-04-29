@@ -1,13 +1,14 @@
 UCL LaTeX Beamer theme
+======================
 
 by Simon Byrne (based on the original template by Maurizio Filippone)
 
 These files form a theme for the Beamer package in LaTeX that is a close
-approximation to the UCL Corporate Identity. 
+approximation to the [UCL Corporate Identity](http://www.ucl.ac.uk/corporate-identity). 
 
 
 Installation
-============
+------------
 
 To use once, simply put the files in the directory of your document.
 
@@ -20,7 +21,7 @@ An appropriate place would be `<texmf>/tex/latex/uclbeamer`
 
 
 Use
-===
+----
 
 The usage of the theme and its many options are given in the file `sample.tex`. 
 
@@ -30,7 +31,7 @@ I am trying to sort out.
 
 
 Notes
-=====
+-----
 
 By default, the package uses the Helvetica font, as Arial (the official UCL
 typeface) is not installed on most TeX distributions. If you really want
@@ -56,7 +57,7 @@ discern was that Arial doesn't have the downstroke on the G.
 
 
 Support
-=======
+-------
 
 Requires a reasonably modern TeX installation. If you're having any problems,
 try upgrading.
