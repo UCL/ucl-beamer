@@ -2,11 +2,12 @@
 \usecolortheme{ucl}
 \RequirePackage{calc}
 
-% the height of the banner when scaled
+% the height of the banner (after scaling)
 \newlength\bannerheight
-% the height of the banner stripe: should be the height of the tower
+% the height of the banner stripe: according to UCL style this should be the
+% height of the tower
 \newlength\stripeheight
-% the amount to trim off the banner (pre-scaling)
+% the amount to trim off the banner (before scaling)
 \newlength\bannerimagetrim
 
 % UCL banner template
@@ -20,6 +21,19 @@
   \settoheight\bannerheight{\usebeamertemplate*{banner}}  
   \setlength\stripeheight{0.1875\bannerheight}
 }
+
+% blank banner, for when you don't want UCL banner on every page
+\defbeamertemplate{banner}{blank}{%
+  \hspace{\beamer@leftmargin}%
+  \begin{beamercolorbox}[wd=\paperwidth,ht=\bannerheight]{banner}%
+  \end{beamercolorbox}
+}
+
+% if you don't want a banner at all.
+\defbeamertemplate{banner}{empty}{%
+}
+
+
 
 % draw the banner on the background
 \defbeamertemplate*{background}{ucl}{% for everything else
@@ -59,11 +73,11 @@
 }  
 
 % Miniframes
-\defbeamertemplate{headline}{miniframes}[1][0.6]{% 
+\defbeamertemplate{headline}{miniframes}[1][0.6\paperwidth]{% 
   \begin{beamercolorbox}[ignorebg,ht=\bannerheight]{section in head/foot}%
     \vbox to\bannerheight{
       \vspace{1ex}%
-      \insertnavigation{#1\paperwidth}%
+      \insertnavigation{#1}%
       \par%
       \vfil}%
   \end{beamercolorbox}%
@@ -96,7 +110,8 @@
 \useinnertheme{rectangles}
 
 % use the Helvetica font
-\usepackage{helvet}
+\usepackage[scaled]{helvet}
+\usepackage{eulervm}
 
 %%% the UCL font is actually Arial, if you want to use it, you should install
 %%% the font using the getnonfreefonts script, then it can be loaded by the

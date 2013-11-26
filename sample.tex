@@ -28,8 +28,8 @@
 %%% For this to work correctly, the each \section command needs to be
 %%% followed by a \subsection. Requires one extra compile.
 % \setbeamertemplate{headline}[miniframes]
-%%% Accepts an optional argument determining the proportional width
-% \setbeamertemplate{headline}[miniframes][0.3]
+%%% Accepts an optional argument determining the width
+% \setbeamertemplate{headline}[miniframes][0.3\paperwidth]
 
 
 %%% Puts the frame title in the banner
@@ -67,6 +67,7 @@
 \setbeamertemplate{navigation symbols}{\vspace{-2ex}} 
 
 
+
 \title[Short Title]{Title of the Presentation}
 \author[Auth. 1 \and Auth.2]{Author 1 \and Author 2}
 \institute[UCL]{%
@@ -79,7 +80,6 @@
 
 
 \begin{frame}
-  \frametitle{}
   \titlepage
 \end{frame}
 
@@ -114,6 +114,10 @@
   \end{example}
 \end{frame}
 
+%%% Can be a bit much UCL
+%%% from here on, remove branding from banners
+\setbeamertemplate{banner}[blank]
+
 \section{Section 2}
 \subsection{Second subsection}
 
@@ -127,9 +131,9 @@
     This is a result.
   \end{theorem}
 
-  $$
+  \[
   x_i = y_i + \varepsilon_i
-  $$
+  \]
 }
 
 
