@@ -86,6 +86,27 @@
 % use boxes instead of circles
 \setbeamertemplate{mini frames}[box]
 
+% Centre for Computational Science headline
+\defbeamertemplate{headline}{ccs}{%
+  \begin{beamercolorbox}[ignorebg,ht=\bannerheight]{section in head/foot}%
+    \vbox to\bannerheight{
+      \vfil%
+      \usebeamerfont*{section in head/foot}%
+      \usebeamercolor[fg]{section in head/foot}%
+      \hspace{1em}%
+      Centre for Computational Science%
+      \par%
+      \vspace*{.5ex}%
+      \hspace{1em}%
+      \usebeamerfont*{subsection in head/foot}%
+      \usebeamercolor[fg]{subsection in head/foot}%
+      Advancing Science through Computers%
+      \par%
+      \vfil}%
+  \end{beamercolorbox}%
+  \ifbeamercolorempty[bg]{banner stripe}{}{\vspace{\stripeheight}}%
+}
+
 \defbeamertemplate{footline}{author title date}
 {
   \leavevmode%
