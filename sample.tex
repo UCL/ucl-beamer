@@ -163,6 +163,84 @@
   \end{itemize}
 }
 
+
+
+%%% Customise the banner using a department headline slogan
+
+\section{Headline customisation}
+
+%%% use department headline template
+\setbeamertemplate{headline}[department]
+
+%%% set department and subdepartment
+\setbeamertemplate{department}{Department of Sample Science}
+\setbeamertemplate{subdepartment}{Subdepartment slogan}
+
+%%% customise the fonts
+\setbeamerfont{section in head/foot}{shape=\scshape,size=\scriptsize,series=\bfseries}
+\setbeamerfont{subsection in head/foot}{shape=\scshape,size=\tiny,series=\bfseries}
+
+%%% customise the colors
+\setbeamercolor{section in head/foot}{fg=white}
+\setbeamercolor{subsection in head/foot}{fg=banner.fg!80!banner.bg}
+
+%%% UCL logo can also be customised
+\setbeamertemplate{banner}[ucl]
+\setbeamercolor{banner}{bg=black}
+\setbeamercolor{banner stripe}{bg=brightblue,fg=black}
+
+\begin{frame}
+  \frametitle{Slide with custom headline}
+\end{frame}
+
+
+
+%%% Customise the slide counter in the footline
+
+\section{Slide counters}
+
+%%% use footline template
+\setbeamertemplate{footline}[author title date]
+\setbeamercolor{footline}{use=banner, bg=black, fg=banner.fg!80!banner.bg}
+
+%%% frame/total: show frame number and total number of frames
+\begin{frame}{Slide counters}
+  \framesubtitle{\texttt{frametotal} is the default}
+  Three templates for the slide counter in the footline are available:
+  \begin{itemize}
+    \item \texttt{frametotal} prints the current frame number and the total number (default)
+    \item \texttt{frameonly} prints the current frame number only
+    \item \texttt{empty} does not print a slide counter
+  \end{itemize}
+\end{frame}
+
+\setbeamertemplate{slide counter}[frameonly]
+\begin{frame}{Slide counters}
+  \framesubtitle{A slide with \texttt{frameonly} slide counter}    
+\end{frame}
+
+\setbeamertemplate{slide counter}[empty]
+\begin{frame}{Slide counters}
+  \framesubtitle{A slide with \texttt{empty} slide counter}
+\end{frame}
+
+\setbeamertemplate{slide counter}[frameonly][Slide]
+\begin{frame}{Slide counters}
+  \framesubtitle{Optional argument can be printed in front of the current number}
+  \texttt{frametotal} and \texttt{frameonly} take an optional argument
+  to be printed in front of the current number (e.g. 'Slide').
+\end{frame}
+
+\setbeamertemplate{slide counter}[frametotal][Slide]
+\begin{frame}{Slide counters}
+  \framesubtitle{Optional argument with \texttt{frametotal}}
+\end{frame}
+
+%%% switch back to plain headline/footline
+\setbeamertemplate{banner}[blank]
+\setbeamertemplate{headline}[ucl]
+\setbeamertemplate{slide counter}[frametotal]
+
 \frame {
   \frametitle{Acknowledgements}
 

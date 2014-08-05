@@ -86,21 +86,21 @@
 % use boxes instead of circles
 \setbeamertemplate{mini frames}[box]
 
-% Centre for Computational Science headline
-\defbeamertemplate{headline}{ccs}{%
+% Department and subdepartment/slogan in the headline
+\defbeamertemplate{headline}{department}{%
   \begin{beamercolorbox}[ignorebg,ht=\bannerheight]{section in head/foot}%
     \vbox to\bannerheight{
       \vfil%
       \usebeamerfont*{section in head/foot}%
       \usebeamercolor[fg]{section in head/foot}%
       \hspace{1em}%
-      Centre for Computational Science%
+      \usebeamertemplate{department}%
       \par%
       \vspace*{.5ex}%
       \hspace{1em}%
       \usebeamerfont*{subsection in head/foot}%
       \usebeamercolor[fg]{subsection in head/foot}%
-      Advancing Science through Computers%
+      \usebeamertemplate{subdepartment}%
       \par%
       \vfil}%
   \end{beamercolorbox}%
@@ -125,20 +125,15 @@
 }
 
 % Slide counter
-\defbeamertemplate*{slide counter}{shownone}[1][]
-{%
+\defbeamertemplate*{slide counter}{frametotal}[1][]{%
+  \usebeamercolor[fg]{date in head/foot}%
+  #1~\insertframenumber\ \vrule width0.3pt height5pt\ \inserttotalframenumber%
 }
-\defbeamertemplate*{slide counter}{showtotal}[1][]
-{%
-{\usebeamercolor[fg]{date in head/foot}%
-#1~\insertframenumber\ \vrule width0.3pt height5pt\ \inserttotalframenumber%
-}%
+\defbeamertemplate{slide counter}{frameonly}[1][]{%
+  \usebeamercolor[fg]{date in head/foot}%
+  #1~\insertframenumber%
 }
-\defbeamertemplate*{slide counter}{default}[1][]
-{%
-{\usebeamercolor[fg]{date in head/foot}%
-#1~\insertframenumber%
-}%
+\defbeamertemplate{slide counter}{empty}{%
 }
 
 % Reduce margins
