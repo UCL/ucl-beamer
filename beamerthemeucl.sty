@@ -86,6 +86,27 @@
 % use boxes instead of circles
 \setbeamertemplate{mini frames}[box]
 
+% Department and subdepartment/slogan in the headline
+\defbeamertemplate{headline}{department}{%
+  \begin{beamercolorbox}[ignorebg,ht=\bannerheight]{section in head/foot}%
+    \vbox to\bannerheight{
+      \vfil%
+      \usebeamerfont*{section in head/foot}%
+      \usebeamercolor[fg]{section in head/foot}%
+      \hspace{1em}%
+      \usebeamertemplate{department}%
+      \par%
+      \vspace*{.5ex}%
+      \hspace{1em}%
+      \usebeamerfont*{subsection in head/foot}%
+      \usebeamercolor[fg]{subsection in head/foot}%
+      \usebeamertemplate{subdepartment}%
+      \par%
+      \vfil}%
+  \end{beamercolorbox}%
+  \ifbeamercolorempty[bg]{banner stripe}{}{\vspace{\stripeheight}}%
+}
+
 \defbeamertemplate{footline}{author title date}
 {
   \leavevmode%
@@ -98,9 +119,21 @@
   \end{beamercolorbox}%
   \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
     \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
-    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+    \usebeamertemplate*{slide counter}\hspace*{2ex}
   \end{beamercolorbox}}%
   \vskip0pt%
+}
+
+% Slide counter
+\defbeamertemplate*{slide counter}{frametotal}[1][]{%
+  \usebeamercolor[fg]{date in head/foot}%
+  #1~\insertframenumber\ \vrule width0.3pt height5pt\ \inserttotalframenumber%
+}
+\defbeamertemplate{slide counter}{frameonly}[1][]{%
+  \usebeamercolor[fg]{date in head/foot}%
+  #1~\insertframenumber%
+}
+\defbeamertemplate{slide counter}{empty}{%
 }
 
 % Reduce margins
