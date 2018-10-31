@@ -5,5 +5,7 @@
 *.pdf
 *.snm
 *.toc
+*.fdb_latexmk
+*.fls
 !banners/*.pdf
 !csml_logo.pdf
