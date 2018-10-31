@@ -1,7 +1,9 @@
 install:
-  - sudo apt-get install chktex
+  - sudo apt-get install chktex latexmk texlive-latex-recommended texlive-latex-extra texlive-fonts-extra texlive-fonts-recommended
 
 script:
   - chktex -W
   - chktex -q *.tex *.sty 2>/dev/null | tee lint.out
   - test ! -s lint.out
+  - latexmk -pdf -interaction=nonstopmode sample.tex
+  - latexmk -pdf -interaction=nonstopmode sample-poster.tex
