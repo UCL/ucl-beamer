@@ -20,7 +20,7 @@
 % puts the title on one line, and subtitle below
 \defbeamertemplate{frametitle}{two lines}{%
   \begin{beamercolorbox}[ignorebg,ht=\bannerheight]{frametitle}%
-    \vbox to\bannerheight{
+    \vbox to\bannerheight{ % chktex 1
       \vspace{1ex}%
       \usebeamerfont{frametitle}\usebeamercolor[fg]{frametitle}%
       \strut\insertframetitle\strut\par%
@@ -39,7 +39,7 @@
 % puts the title and subtitle on the same line
 \defbeamertemplate{frametitle}{one line}{%
   \begin{beamercolorbox}[ignorebg,ht=\bannerheight]{frametitle}%
-    \vbox to\bannerheight{
+    \vbox to\bannerheight{ % chktex 1
       \vspace{1ex}%
       \usebeamerfont{frametitle}\usebeamercolor[fg]{frametitle}%
       \strut\insertframetitle\strut%
@@ -65,4 +65,4 @@
 
 
 \ExecuteOptionsBeamer{large}
-\ProcessOptionsBeamer
+\ProcessOptionsBeamer%

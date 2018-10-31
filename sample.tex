@@ -80,7 +80,7 @@
 
 
 \begin{frame}
-  \titlepage
+  \titlepage%
 \end{frame}
 
 \section{Section 1}
@@ -91,7 +91,7 @@
   \begin{itemize}
   \item 1
   \item 2
-    \pause
+    \pause%
   \item \alert{Alert!!}
   \end{itemize}
 \end{frame}
@@ -121,7 +121,7 @@
 \section{Section 2}
 \subsection{Second subsection}
 
-\frame {
+\frame{
   \frametitle{Third Slide}
   \begin{enumerate}
   \item 1
@@ -137,7 +137,7 @@
 }
 
 
-\frame {
+\frame{
   \frametitle{Conclusions}
   \begin{block}{A block}
     An environment inside the block
@@ -228,7 +228,7 @@
 \begin{frame}{Slide counters}
   \framesubtitle{Optional argument can be printed in front of the current number}
   \texttt{frametotal} and \texttt{frameonly} take an optional argument
-  to be printed in front of the current number (e.g. 'Slide').
+  to be printed in front of the current number (e.g. `Slide').
 \end{frame}
 
 \setbeamertemplate{slide counter}[frametotal][Slide]
@@ -241,9 +241,8 @@
 \setbeamertemplate{headline}[ucl]
 \setbeamertemplate{slide counter}[frametotal]
 
-\frame {
+\frame{%
   \frametitle{Acknowledgements}
-
 }
 
 \end{document}

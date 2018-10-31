@@ -3,12 +3,12 @@
 \RequirePackage{calc}
 
 % the height of the banner (after scaling)
-\newlength\bannerheight
+\newlength\bannerheight%
 % the height of the banner stripe: according to UCL style this should be the
 % height of the tower
-\newlength\stripeheight
+\newlength\stripeheight%
 % the amount to trim off the banner (before scaling)
-\newlength\bannerimagetrim
+\newlength\bannerimagetrim%
 
 % UCL banner template
 \defbeamertemplate*{banner}{ucl}[1][1]{%
@@ -56,7 +56,7 @@
 % Section / Subsection
 \defbeamertemplate{headline}{section}{%
   \begin{beamercolorbox}[ignorebg,ht=\bannerheight]{section in head/foot}%
-    \vbox to\bannerheight{
+    \vbox to\bannerheight{ % chktex 1
       \usebeamerfont{section in head/foot}%
       \vspace{1em}%
       \hspace{1em}\insertsectionhead%
@@ -75,7 +75,7 @@
 % Miniframes
 \defbeamertemplate{headline}{miniframes}[1][0.6\paperwidth]{% 
   \begin{beamercolorbox}[ignorebg,ht=\bannerheight]{section in head/foot}%
-    \vbox to\bannerheight{
+    \vbox to\bannerheight{ % chktex 1
       \vspace{1ex}%
       \insertnavigation{#1}%
       \par%
@@ -89,7 +89,7 @@
 % Department and subdepartment/slogan in the headline
 \defbeamertemplate{headline}{department}{%
   \begin{beamercolorbox}[ignorebg,ht=\bannerheight]{section in head/foot}%
-    \vbox to\bannerheight{
+    \vbox to\bannerheight{ % chktex 1
       \vfil%
       \usebeamerfont*{section in head/foot}%
       \usebeamercolor[fg]{section in head/foot}%
@@ -115,7 +115,7 @@
     \usebeamerfont{author in head/foot}\insertshortauthor\expandafter\beamer@ifempty\expandafter{\beamer@shortinstitute}{}{~~(\insertshortinstitute)}
   \end{beamercolorbox}%
   \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
-    \usebeamerfont{title in head/foot}\insertshorttitle
+    \usebeamerfont{title in head/foot}\insertshorttitle%
   \end{beamercolorbox}%
   \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
     \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
