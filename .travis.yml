@@ -1,0 +1,7 @@
+install:
+  - sudo apt-get install chktex
+
+script:
+  - chktex -W
+  - chktex -q *.tex *.sty 2>/dev/null | tee lint.out
+  - test ! -s lint.out

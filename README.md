@@ -1,4 +1,4 @@
-UCL LaTeX Beamer theme
+UCL LaTeX Beamer theme [![Build Status](https://travis-ci.com/UCL/ucl-beamer.svg?branch=master)](https://travis-ci.com/UCL/ucl-beamer)
 ======================
 
 by Simon Byrne (based on the original template by Maurizio Filippone)
