@@ -107,6 +107,8 @@
   \ifbeamercolorempty[bg]{banner stripe}{}{\vspace{\stripeheight}}%
 }
 
+\patchcmd{\beamer@calculateheadfoot}{\advance\footheight by 4pt}{\advance\footheight by 1em}{}{} % chktex 1
+
 \defbeamertemplate{footline}{author title date}
 {
   \leavevmode%
