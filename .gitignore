@@ -7,5 +7,7 @@
 *.toc
 *.fdb_latexmk
 *.fls
+*.synctex.gz
+*.synctex(busy)
 !banners/*.pdf
 !csml_logo.pdf
