@@ -55,3 +55,12 @@ Support
 Requires a reasonably modern TeX installation (it has only been tested on MacTeX 2012). If you're having any problems, try upgrading.
 
 This is completely unofficial, and not supported by UCL. If you notice any bugs however, please do [open an issue](https://github.com/UCL/ucl-beamer/issues/new), or better yet, send in a pull request.
+
+FAQ
+---
+
+## `=` and `+` are not rendered in math mode
+
+Seen with TeXlive 2017 on macOS 10.12, reproduced on macOS 12.1, caused by deprecated [mathptmx](https://ctan.org/pkg/mathptmx?lang=en) package.
+
+Solution: Following this [issue](https://github.com/UCL/ucl-beamer/issues/3), use [newtx](https://ctan.org/pkg/newtx) package
