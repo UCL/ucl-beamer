@@ -11,10 +11,8 @@
 % but currently will just leave black
 \newcommand\uclcolorname[2]{%
   \extractcolorspec{#1}{\ucl@colorspec@current}%
-  \forcsvlist{\ucl@colorcheck{#2}}{black,white,darkpurple,darkred,darkblue,%
-    darkgreen,darkbrown,richred,midred,navyblue,midgreen,darkgrey,pink,%
-    orange,brightblue,brightgreen,lightgrey,lightpurple,yellow,lightblue,%
-    lightgreen,stone}%
+  \forcsvlist{\ucl@colorcheck{#2}}{black,white,darkpurple,brightpurple,%
+    midpurple,palepurple,lightpurple,heritageblue}%
 }
 % a utility function called by \uclcolorname
 \newcommand\ucl@colorcheck[2]{%
@@ -31,11 +29,6 @@
 \setbeamercolor{structure}{use=banner,fg=banner.bg}
 
 \setbeamercolor{frametitle}{fg=black}
-
-% used for \alert
-\setbeamercolor{alerted text}{fg=richred}
-% used in the example environment
-\setbeamercolor{example text}{fg=darkgreen}
 
 \setbeamercolor{block title}{parent=banner}
 %%% can use the following for a striped
